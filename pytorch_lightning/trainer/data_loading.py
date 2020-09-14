@@ -173,6 +173,7 @@ class TrainerDataLoadingMixin(ABC):
         }
 
         dl_args['sampler'] = sampler
+        dl_args['multiprocessing_context'] = dataloader.multiprocessing_context
         dataloader = type(dataloader)(**dl_args)
         return dataloader
 
