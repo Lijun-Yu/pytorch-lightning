@@ -167,6 +167,7 @@ class ModelIO(object):
                     model_args.update(checkpoint[hparam_key])
 
             model_args = _convert_loaded_hparams(model_args, checkpoint.get(cls.CHECKPOINT_HYPER_PARAMS_TYPE))
+            model_args = Namespace(**model_args)
 
             args_name = checkpoint.get(cls.CHECKPOINT_HYPER_PARAMS_NAME)
 
